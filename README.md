@@ -5,19 +5,33 @@
 <h1 align="center">SecureAuth Admin</h1>
 
 <p align="center">
-  A clean PHP and MySQL admin login gateway with hardened sessions, CSRF protection, login throttling, optional email OTP, and audit trails.
+  A lightweight PHP/MySQL admin authentication gateway with secure sessions, CSRF protection, OTP verification, login throttling, and audit logs.
 </p>
 
 <p align="center">
+  <a href="https://github.com/navneetyadav-code/secureauth-admin/releases/tag/v1.0.0"><img alt="Release" src="https://img.shields.io/github/v/release/navneetyadav-code/secureauth-admin?style=for-the-badge&color=0f766e"></a>
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-f59e0b?style=for-the-badge"></a>
   <img alt="PHP 8+" src="https://img.shields.io/badge/PHP-8%2B-777BB4?style=for-the-badge&logo=php&logoColor=white">
   <img alt="MySQL" src="https://img.shields.io/badge/MySQL-8%2B-00758F?style=for-the-badge&logo=mysql&logoColor=white">
   <img alt="Apache" src="https://img.shields.io/badge/Apache-.htaccess-D22128?style=for-the-badge&logo=apache&logoColor=white">
-  <img alt="Security" src="https://img.shields.io/badge/Security-Reviewed-0F766E?style=for-the-badge">
+  <a href="docs/SECURITY.md"><img alt="Security reviewed" src="https://img.shields.io/badge/Security-Reviewed-0F766E?style=for-the-badge"></a>
+  <a href="https://github.com/navneetyadav-code/secureauth-admin/actions"><img alt="PHP Syntax Check" src="https://img.shields.io/github/actions/workflow/status/navneetyadav-code/secureauth-admin/php-syntax.yml?branch=main&style=for-the-badge&label=PHP%20syntax"></a>
 </p>
 
-SecureAuth Admin is a small, serious authentication layer for PHP projects. It keeps the surface area easy to review while covering the parts that matter most: password hashing, strict cookies, session expiry, CSRF tokens, optional email verification, IP lockouts, safe logging, and a first-admin setup flow.
+SecureAuth Admin is a small, serious authentication layer for PHP projects. It keeps the surface area easy to review while covering the parts that matter most: password hashing, strict cookies, session expiry, CSRF tokens, optional email OTP verification, IP lockouts, safe logging, and a first-admin setup flow.
 
 It is not trying to be a giant framework. It is the front door.
+
+## Why Developers Use It
+
+- Drop-in PHP admin login system for dashboards, panels, internal tools, and small SaaS back offices.
+- Secure login starter with PDO, MySQL, CSRF defense, OTP email verification, session hardening, and audit logs already wired together.
+- Beginner-friendly XAMPP setup, but written with production habits like `.env` secrets, Apache deny rules, and safe logging.
+- MIT licensed, so you can use it in personal, commercial, client, and learning projects.
+
+## Keywords
+
+`php authentication`, `php login system`, `secure admin login`, `php mysql login`, `admin dashboard login`, `csrf protection`, `two factor authentication`, `email otp`, `pdo mysql`, `xampp php project`, `php security`, `audit logs`, `login throttling`, `secure session management`
 
 ## Quick Links
 
@@ -25,6 +39,9 @@ It is not trying to be a giant framework. It is the front door.
 | --- | --- |
 | [Project documentation](docs/README.md) | Step-by-step setup, configuration, login flow, operations, and troubleshooting. |
 | [Security review](docs/SECURITY.md) | Code-level security coverage, remaining responsibilities, and manual test checklist. |
+| [Contributing guide](CONTRIBUTING.md) | How to report bugs, request features, and send clean pull requests. |
+| [Changelog](CHANGELOG.md) | Version history for releases. |
+| [GitHub SEO checklist](docs/GITHUB_SEO.md) | Repository topics, description, social preview, and engagement settings. |
 | [Database schema](database/schema.sql) | Tables for admins, login attempts, and audit logs. |
 | [.env example](.env.example) | Safe template for local and server configuration. |
 
@@ -124,6 +141,16 @@ temporary files
 ```
 
 The included `.gitignore` already handles the common cases. Still, review `git status --short` before every commit.
+
+## Good First Contributions
+
+Useful improvements are welcome:
+
+1. Stronger first-admin password rules.
+2. Account-level throttling in addition to IP throttling.
+3. Admin management screen for enabling OTP without SQL.
+4. Automated tests for login, CSRF, lockout, OTP expiry, and setup lockout.
+5. Translations for setup and login screens.
 
 ## Verify The App
 
