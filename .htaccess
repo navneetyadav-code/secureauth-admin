@@ -1,0 +1,18 @@
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(?:storage|database|docs|vendor)(?:/|$) - [F,L,NC]
+</IfModule>
+
+<FilesMatch "(^\.|\.env$|\.env\.|composer\.(json|lock)$|package(-lock)?\.json$|.*\.(sql|log|bak|tmp|ini|conf|md)$)">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "DENY"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+</IfModule>
